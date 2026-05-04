@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Sending SOS...</h2>
+
+<script>
+navigator.geolocation.getCurrentPosition(function(position) {
+
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+
+  const location = "https://maps.google.com/?q=" + lat + "," + lon;
+
+  const message = "SOS HELP. My location: " + location;
+
+  const whatsapp = "https://wa.me/1234567890?text=" + encodeURIComponent(message);
+
+  window.location.href = whatsapp;
+
+});
+</script>
+
+</body>
+</html>
